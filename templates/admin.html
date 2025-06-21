@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin</title></head>
+<body>
+<h2>Admin - Add Product</h2>
+<form method="POST">
+  <input type="text" name="name" placeholder="Product Name" required>
+  <input type="text" name="price" placeholder="Price" required>
+  <textarea name="description" placeholder="Description" required></textarea>
+  <input type="text" name="image" placeholder="Image URL">
+  <button type="submit">Add Product</button>
+</form>
+
+<h2>Existing Products</h2>
+{% for product in products %}
+  <div>
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>₹{{ product.price }}</p>
+    <a href="/delete_product/{{ product.id }}">Delete</a>
+  </div>
+{% endfor %}
+</body>
+</html>

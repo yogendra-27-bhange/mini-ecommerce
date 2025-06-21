@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Checkout</title></head>
+<body>
+<h2>Checkout</h2>
+{% if success %}
+  <p>Order placed successfully!</p>
+{% else %}
+  <form method="POST">
+    <button type="submit">Place Order</button>
+  </form>
+{% endif %}
+</body>
+</html>
